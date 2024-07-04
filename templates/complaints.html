@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>UGEL - Complaints</title>
+{% endblock %}
+
+{% block body %}
+<h1 id="topic">LOGGED COMPLAINTS</h1>
+    <div class="tickets">
+        {% if Issues|length < 1 %}
+        <h3 style="text-align: center; color: #7d8da1;" >No Issue(s) Have Been Submitted Yet!</h3>
+        {% else %}
+       <table>
+        <thead>
+            <tr>
+                <th>ROOM NUMBER</th>
+                <th>STUDENT NAME</th>
+                <th>HALL</th>
+                <th>COMPLAINTS TYPE</th>
+                <th>DESCRIPTION</th>
+                <th>TIMESTAMP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Complaints in Issues %}
+            <tr>
+               <td>{{Complaints.room_number}}</td>
+               <td>{{Complaints.std_fullname}}</td>
+               <td>{{Complaints.hall}}</td>
+               <td>{{Complaints.issue_type}}</td>
+               <td>{{Complaints.description}}</td>
+               <td>{{Complaints.date_submitted.strftime('%d-%m-%Y %H:%M:%S')}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+       </table>
+       {% endif %}
+    </div>
+    <script>
+        const icons = document.querySelector(".lodge-icon");
+        icons.classList.add("active")
+    </script>
+{% endblock %}

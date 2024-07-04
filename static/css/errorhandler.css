@@ -1,0 +1,56 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+aside #logo{
+   color: rgb(32, 60, 107)
+}
+aside #warning{
+   color: rgb(210, 174, 107)
+}
+aside .top{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 1.4rem;
+}
+aside .logo{
+   display: flex;
+   gap: 0.05rem;
+}
+aside .logo h3{
+   margin-top: 1.3rem;
+}
+aside .logo h3 span{
+   display: block;
+}
+aside .logo img{
+   width: 5rem;
+   height: 6rem;
+}
+aside .close{
+   margin-bottom: 2rem;
+   margin-right: 4rem;
+}
+aside .close img{
+   height: 2.2rem;
+   width: auto;
+   cursor: pointer;
+   transition: all 300ms ease;
+}
+aside .close img:hover{
+   height: 2.7rem;
+   width: auto;
+}
+main{
+   margin: 2rem 6rem 2rem;
+   text-align: center;
+}
+main .display-error{
+   margin: 5rem 6rem 5rem;
+   padding: 2rem;
+   font-size: 1.4rem;
+   color: #ff7782;
+   background: #dce1eb;
+   border-radius: 2rem;
+}

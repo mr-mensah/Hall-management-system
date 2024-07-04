@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 46 42" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<vectornator:setting key="IsTimeLapseWatermarkDisabled" value="false"/>
+<vectornator:setting key="UndoHistoryDisabled" value="true"/>
+<vectornator:setting key="VNDimensionsVisible" value="true"/>
+<vectornator:setting key="VNSnapToGuides" value="true"/>
+<vectornator:setting key="WDCMYKEnabledKey" value="false"/>
+<vectornator:setting key="WDDisplayWhiteBackground" value="false"/>
+<vectornator:setting key="WDDynamicGuides" value="false"/>
+<vectornator:setting key="WDGuidesVisible" value="true"/>
+<vectornator:setting key="WDIsolateActiveLayer" value="false"/>
+<vectornator:setting key="WDOutlineMode" value="false"/>
+<vectornator:setting key="WDRulersVisible" value="true"/>
+<vectornator:setting key="WDSnapToEdges" value="false"/>
+<vectornator:setting key="WDSnapToGrid" value="false"/>
+<vectornator:setting key="WDSnapToPoints" value="false"/>
+<vectornator:setting key="WDUnits" value="Points"/>
+</metadata>
+<defs/>
+<g id="Untitled" vectornator:layerName="Untitled">
+<path d="M31.15 29.95L32.75 28.35L28.35 23.95C28.7167 23.3833 29.025 22.7917 29.275 22.175C29.525 21.5583 29.65 20.9167 29.65 20.25C29.65 18.35 29 16.75 27.7 15.45C26.4 14.15 24.8 13.5 22.9 13.5C21 13.5 19.4 14.15 18.1 15.45C16.8 16.75 16.15 18.35 16.15 20.25C16.15 22.15 16.8 23.75 18.1 25.05C19.4 26.35 21 27 22.9 27C23.6333 27 24.325 26.875 24.975 26.625C25.625 26.375 26.2667 26.0667 26.9 25.7L31.15 29.95ZM22.9 24.5C21.7333 24.5 20.7333 24.0833 19.9 23.25C19.0667 22.4167 18.65 21.4167 18.65 20.25C18.65 19.0833 19.0667 18.0833 19.9 17.25C20.7333 16.4167 21.7333 16 22.9 16C24.0667 16 25.0667 16.4167 25.9 17.25C26.7333 18.0833 27.15 19.0833 27.15 20.25C27.15 21.4167 26.7333 22.4167 25.9 23.25C25.0667 24.0833 24.0667 24.5 22.9 24.5ZM3.5 42C3.06667 42 2.70833 41.8583 2.425 41.575C2.14167 41.2917 2 40.9333 2 40.5C2 40.0667 2.14167 39.7083 2.425 39.425C2.70833 39.1417 3.06667 39 3.5 39L44.5 39C44.9333 39 45.2917 39.1417 45.575 39.425C45.8583 39.7083 46 40.0667 46 40.5C46 40.9333 45.8583 41.2917 45.575 41.575C45.2917 41.8583 44.9333 42 44.5 42L3.5 42ZM7 36C6.2 36 5.5 35.7 4.9 35.1C4.3 34.5 4 33.8 4 33L4 9C4 8.2 4.3 7.5 4.9 6.9C5.5 6.3 6.2 6 7 6L41 6C41.8 6 42.5 6.3 43.1 6.9C43.7 7.5 44 8.2 44 9L44 33C44 33.8 43.7 34.5 43.1 35.1C42.5 35.7 41.8 36 41 36L7 36ZM7 33L41 33L41 9L7 9L7 33ZM7 33L7 9L7 33Z" fill="#ffffff" fill-rule="evenodd" opacity="1" stroke="none"/>
+</g>
+</svg>

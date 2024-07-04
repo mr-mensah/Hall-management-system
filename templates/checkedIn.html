@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+    CHECKED-IN STUDENTS
+</title>
+{% endblock %}
+
+{% block body %} 
+    <h1 id="topic">CHECKED-IN STUDENTS</h1>
+    <div class="tickets">
+        {% if student|length < 1 %}
+        <h3 style="text-align: center; color: #7d8da1;">For This Semester, No Student Has checked-In Yet!</h3>
+        {% else %}
+       <table>
+        <thead>
+            <tr>
+                <th>Fullname</th>
+                <th>ID</th>
+                <th>Hall</th>
+                <th>Room</th>
+                <th>Sex</th>
+                <th>level</th>
+                <th>Course</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{student.fullname}}</td>
+                <td>{{student.student_id}}</td>
+                <td>{{student.hall}}</td>
+                <td>{{student.room_number}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.level}}</td>
+                <td>{{student.course}}</td>
+                <td>{{student.contact}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+       </table>
+       {% endif %}
+    </div>
+    <script>
+        const icons = document.querySelector(".lodge-icon");
+    icons.classList.add("active")
+    </script>
+{% endblock %}

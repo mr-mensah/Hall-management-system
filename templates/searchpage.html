@@ -1,0 +1,77 @@
+{% extends 'database.html' %}
+{%block head%}
+<title>Search Student</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+{%endblock%}
+
+{%block body%}
+<div class="searchpage">
+<div class="searchbody">
+   <div class="searchbox">
+      <form action="" method="post" onsubmit="return ValidateForm();">
+      <button class="btn-search" type="submit">
+         <img src="{{url_for('static', filename='images/search_btn.svg')}}">
+         <i class="fas fa-search"></i>
+      </button>
+      <input type="text" class="input-search" placeholder="Type to Search..." name="searchQuery" autocomplete="off" required>
+      </form>
+   </div>
+</div>
+<!------------------------- Results Show Up Here -------------------->
+<div class="tickets">
+   {% if results is not defined and results|length == 0 %}
+   <h3 style="text-align: center; color: #7d8da1;" >Search for student by Name(s), ID or Room Number</h3>
+   {% elif results|length < 1 %}
+   <h3 style="text-align: center; color: #7d8da1;" >There is no such student with the queried detail in the Ugel Halls</h3>
+   {% else %}
+  <table>
+   <thead>
+       <tr>
+           <th>SURNAME NAME</th>
+           <th>OTHER NAMES</th>
+           <th>ID</th>
+           <th>GENDER</th>
+           <th>HALL</th>
+           <th>ROOM NUMBER</th>
+           <th>LEVEL</th>
+           <th>COURSE</th>
+           <th>CONTACT</th>
+           <th>EMAIL</th>
+           {% if current_user.portfolio == "Hall Tutor" %}
+            <th>ACTIONS</th>
+           {% else %}
+       </tr>
+           {% endif %}
+    </thead>
+    <tbody>
+       {% for Student in results %}
+       <tr>
+           <td>{{Student.surname}}</td>
+           <td>{{Student.othernames}}</td>
+           <td>{{Student.student_id}}</td>
+           <td>{{Student.gender}}</td>
+           <td>{{Student.hall}}</td>
+           <td>{{Student.room_number}}</td>
+           <td>{{Student.level}}</td>
+           <td>{{Student.course}}</td>
+           <td>{{Student.contact}}</td>
+           <td>{{Student.email}}</td>
+           {% if current_user.portfolio == "Hall Tutor" %}
+           <td class="action">
+               <a href="/update/{{Student.id}}">Update</a>
+               <a href="/delete/{{Student.id}}">Delete</a>
+           {% else %}
+           </td>
+           {% endif %}
+       </tr>
+       {% endfor %}
+    </tbody>
+  </table>
+  {%endif%}
+</div>
+</div>
+<script>
+    const icons = document.querySelector(".dash-icon");
+    icons.classList.add("active")
+</script>
+{%endblock%}

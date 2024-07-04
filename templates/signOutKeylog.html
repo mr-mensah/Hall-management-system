@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+  <title>Key Logs</title>
+{% endblock %}
+
+{% block body %}
+<h1 id="topic">KEY LOGS</h1>
+<div id="bucket" class="container">
+  <header>Fill Keylog Details</header>
+  <form action="#" method="post">
+      <div class="form first">
+          <div class="details personal">
+              <div class="fields">
+                  <div class="input-field">
+                      <label>Room Number</label>
+                      <input name="room_number" type="text" value="{{updateLog.room_number}}" disabled required>
+                  </div>
+                  <div class="input-field">
+                      <label>Loggers Name</label>
+                      <input name="loggers_name" type="text" value="{{updateLog.loggers_name}}" disabled required>
+                  </div>
+                  <div class="input-field" >
+                      <label>Collectors ID</label>
+                      <input name="collectors_id" type="text" required>
+                  </div>
+              </div>                        
+                  <button class="sumbit" type="submit">
+                      <span class="btnText">Sign Out</span>
+                      <i class="uil uil-navigator"></i>
+                  </button>
+              </div>
+          </div> 
+      </div>
+  </form>
+<!-------------------- Keysbook Records --------------------->
+<h1 id="topic">LOG KEY RECORDS</h1>
+<div class="tickets">
+  {% if Logs|length < 1 %}
+        <h3 style="text-align: center; color: #7d8da1;" >Users Haven't Logged Any Keys Yet!</h3>
+        {% else %}
+    <table>
+      <thead>
+        <tr>
+          <th>Room Number</th>
+          <th>Name of Logger</th>
+          <th>Time In</th>
+          <th>Name of Collectors</th>
+          <th>Time Out</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for Keylog in Logs %}
+        <tr>
+          <td>{{Keylog.room_number}}</td>
+          <td>{{Keylog.loggers_name}}</td>
+          <td>{{Keylog.time_in.strftime('%d-%m-%Y %H:%M:%S')}}</td>
+          <td>{{Keylog.collectors_name}}</td>
+          <td>{{Keylog.time_out}}</td>
+          <td class="sign-out">
+            <a href="#" class="warning">Sign Out</a>
+          </td>
+        </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    {%endif%}
+  </div>
+  <script>
+    const icons = document.querySelector(".lodge-icon");
+    icons.classList.add("active")
+</script>
+<script>
+  const collector = document.getElementById("collector");
+  
+</script>
+{% endblock %}

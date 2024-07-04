@@ -1,0 +1,86 @@
+* {
+   margin: 0
+ }
+
+ .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 100vh;
+   background: url(/static/images/resume.png) ;
+   background-size: cover;
+ }
+ .logo{
+  display:flex;
+  gap: 0rem;
+}
+.logo h3{
+  margin-top:0.9rem;
+}
+.logo img{
+  width: 5rem;
+  height: 5rem;
+}
+#logo{
+color: rgb(32, 60, 107);
+}
+#warning{
+color: rgb(210, 174, 107)
+}
+ 
+ .container h1 {
+   color: white;
+   font-family: sans-serif;
+   margin-top: 2px;
+   margin-bottom: 2px;
+ }
+ 
+ .registartion-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 600px;
+   color: rgb(14, 13, 13);
+   font-size: 18px;
+   font-family: sans-serif;
+   background-color: #dce1eb;
+   padding: 20px;
+ }
+ 
+ .registartion-form input,
+ .registartion-form select{
+   border: none;
+   padding: 5px;
+   margin-top: 10px;
+   font-family: sans-serif;
+ }
+ 
+ .registartion-form input:focus,
+ .registartion-form textarea:focus {
+   box-shadow: 3px 3px 10px rgb(228, 228, 228), -3px -3px 10px rgb(224, 224, 224);
+ }
+ 
+ .registartion-form .submit {
+   width: 100%;
+   padding: 8px 0;
+   font-size: 20px;
+   color:  white;
+   background-color: #ffbb55;
+   border-radius: 5px;
+   outline: none;
+     cursor: pointer;
+     font-weight: bold;
+   background: #ffbb55;
+     border-radius: 3px;
+     border: 1px solid #e4b671;
+     transition: .5s;
+ }
+ 
+ .registartion-form .submit:hover {
+   box-shadow: 3px 3px 6px rgb(255, 214, 176);
+   background: #e3c89e;
+ }
+ label{
+   color: #363949;
+ }

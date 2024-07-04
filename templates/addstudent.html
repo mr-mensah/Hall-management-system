@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>UGEL - Add Student</title>
+    <script src="{{url_for('static', filename='js/addstudent.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+<h1 id="topic">ADD STUDENT</h1>
+<div class="container">
+    <header>Fill Student Details</header>
+
+    <form action="#" method="post" onsubmit="return checkstu_id()">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Student ID</label>
+                            <input name="student_id" id="stu_id" type="text" required>
+                            <span id = "std_message" style="color:red"> </span>
+                        </div>
+                        <div class="input-field" >
+                            <label>Surname</label>
+                            <input name="surname" type="text" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Other Names</label>
+                            <input name="othernames" type="text" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select name="gender" id="gender" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Hall</label>
+                            <select name="hall" required>
+                                <option disabled selected value={{current_user.hall}}>{{current_user.hall}}</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Level</label>
+                            <select name="level" id="level" required>
+                                <option value="">Select Level</option>
+                                <option value="100" >100</option>
+                                <option value="200" >200</option>
+                                <option value="300" >300</option>
+                                <option value="400" >400</option>
+                                <option value="500" >500</option>
+                                <option value="600" >600</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Room Number</label>
+                            <input name="room_number" type="text" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Phone Number</label>
+                            <input name="contact" type="text" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Course</label>
+                            <input name="course" type="text" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input name="email" type="text" required>
+                        </div>
+                    </div>                        
+                    <button class="sumbit" type="submit">
+                        <span class="btnText">Add Student</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div> 
+    </form>
+</div>
+<script>
+const icons = document.querySelector(".add-icon");
+icons.classList.add("active")
+
+var stu_id = document.getElementById("stu_id").value;
+
+function checkstu_id(){
+    var std_idlength = stu_id.value.length;
+if (std_idlength !== 8){ 
+   document.getElementById("std_message").innerHTML = "Select Student's Please!";  
+   return false;  
+}
+}
+</script>
+{% endblock %}

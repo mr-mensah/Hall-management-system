@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Dashboard</title>
+{% endblock %}
+
+{% block body %}
+<h1 id="topic">DASHBOARD</h1>
+<div class="date-time">
+        <input type="date" id="currentDate" disabled>
+        <input type="time" id="currentTime" disabled>
+</div>
+<div class="tabs">
+    <div class="group-tabs">
+    <a href="/search">
+    <div class="a-tab" id="search">
+        <div class="outer-middle">
+            <span> <img class="btn" src="{{url_for('static', filename='images/screen_search_desktop_FIlled_white.svg')}}"></span>
+            <div class="middle">
+                <div class="left">
+                    <h2>SEARCH STUDENT</h2>
+                    <small class="text-muted">Search Student By Name or ID</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+    <a href="/database">
+        <div class="a-tab" id="gender-analytics">
+            <span> <img class="btn" src="{{url_for('static', filename='images/bar_chart_white.svg')}}"></span>
+            <div class="middle">
+                <div class="left">
+                    <h3>UGEL RESIDENTS</h3>
+                    <h2>MALE: <span id="dash-ans">{{Male}}</span></h2>
+                    <h2>FEMALE: <span id="dash-ans">{{Female}}</span></h2>
+                    <small class="text-likemuted">TOTAL: <span id="dash-ans">{{Female + Male}}</span></small>
+                </div>
+            </div>
+            
+        </div>
+    </a>
+    </div>
+    <a href="/events">
+    <div class="a-tab" id="upcoming-events">
+        <div class="class-events">
+            <span> <img class="btn" src="{{url_for('static', filename='images/edit_calendar_white.svg')}}"></span>
+            <div class="middle">
+                <div class="left">
+                    <h3>UPCOMING HALL EVENTS</h3>
+                </div>
+            </div>
+        </div>
+    <div class="events-table">
+        {% if PostedEvents|length < 1 %}
+        <h3 style="text-align: center; color:#f1a6ac;" >No Event(s) Added Yet!</h3>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date of Event</th>
+                </tr>
+            </thead>
+            <tbody class="event-info">
+                {% for Events in PostedEvents %}
+                <tr>
+                    <td class="text-muted">{{Events.event_name}}</td>
+                    <td class="text-muted">{{Events.event_date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+           </table>
+           {% endif %}
+    </div>
+    </div>
+    </a>
+</div>
+
+<!-------------------------------- Dashboard's system logs ----------------------------->
+<h3 style="text-align: center; font-size: 1.3rem; color:#363949">SYSTEM LOGS</h3>
+<div class="tickets" id="dashboard-logs">
+    {% if Activity|length < 1 %}
+        <h3 style="text-align: center; color: #7d8da1;" >System Haven't Logged Any Activities Yet!</h3>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Doer</th>
+                    <th>Event</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Activities in Activity %}
+                <tr>
+                    <td>{{Activities.doer}}</td>
+                    <td>{{Activities.event}}</td>
+                    <td>{{Activities.date_of_event.strftime('%d-%m-%Y %H:%M:%S')}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+           </table>
+           {% endif %}
+    <div class="show-all">
+        <a href="/systemtickets">Show All</a>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/dashboard.js')}}"></script>
+{% endblock %}

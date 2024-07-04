@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="UGEL HALL MANAGEMENT SYSTEM">
+<meta name="author" content="END OF COURSE PROJECT">
+<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+<body>
+<main>
+<h1 id="topic" style="color:rgb(32, 60, 107)">UGEL <span style="color: rgb(210, 174, 107)">STUDENTS PORTAL</span></h1>
+<div class="porterslodge">
+    <div class="lodge">
+        <a href="/checkIn">
+            <div class="ports">
+                <span><img id="stuLogbook" class="btn" src="{{url_for('static', filename='images/menu_book_FILL0_wght400_GRAD0_opsz48.svg')}}"></span>
+                <h2>CHECK-IN ROOM</h2>
+            </div>
+        </a>
+        <a href="/complaintsSubmission">
+            <div class="ports">
+            <span><img id="StuComplaint" class="btn" src="{{url_for('static', filename='images/construction_FILL0_wght400_GRAD0_opsz48.svg')}}"></span>
+            <h2>SUBMIT COMPLAINT</h2>
+            </div>
+        </a>
+        
+    </div>
+</div>
+</main>
+</body>

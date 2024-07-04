@@ -1,0 +1,88 @@
+{% extends 'home.html' %}
+
+{% block head %}
+<title>UGEL - About Us</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/aboutus.css')}}">
+{% endblock %}
+
+{% block body%}
+<div class="about-page">
+  <div class="subcontainer">
+    <div class="about-content">
+      <h1 id="head">ABOUT US</h1>
+      <p>
+        This System is built as the end of course final year project of some six students 
+        from the University of Ghana; Computer Science Department. 
+        Dr. Ferdinand Katsriku being the project supervisor, supervised the design and implementation
+        of this project. The collaborators focused on making this management system for the UGEL Halls 
+        due to its relatively, huge data they work on each day. Nevertheless, it 
+        can surely be customized for any other hall or hostel on campus.
+        An objective was making this system a much easier one to use and less complicated, 
+        while simultaneously increasing workflow of users in the UGEL halls.
+        With this Hall Management System, users are guaranteed to have an easier
+        time managing the large students count in these halls.
+      </p>
+    </div>
+  </div>
+  <div class="collabrators">
+    <div class="Team-supervisor">
+      <img
+        class="member"
+        src="{{url_for('static', filename='images/Hubert.jpeg')}}"
+        alt="DR. Ferdinand"/>
+      <h3>PROJECT SUPERVISOR</h3>
+    </div>
+    <h3>Team Members:</h3>
+    <div class="team-set">
+    <div class="Team">
+      <img
+        class="member"
+        src="{{url_for('static', filename='images/Hubert.png')}}"
+        alt="Hubert"/>
+        <h3>HUBERT</h3>
+    </div>
+  
+    <div class="Team">
+      <img
+        class="member"
+        src="{{url_for('static', filename='images/Eddy.jpg')}}"
+        alt="EdUMUND"/>
+        <h3>EDUMUND</h3>
+    </div>
+
+    <div class="Team">
+      <img
+        class="member"
+        src="{{url_for('static', filename='images/Narh.jpg')}}"
+        alt="Ama"/>
+        <h3>NARH</h3>
+    </div>
+  </div>
+  <div class="team-set">
+    <div class="Team">
+        <img
+          class="member"
+          src="{{url_for('static', filename='images/Hubert.jpeg')}}"
+          alt="Immanuel"/>
+          <h3>IMMANUEL</h3>
+    </div>
+
+    <div class="Team">
+        <img
+          class="member"
+          src="{{url_for('static', filename='images/Hubert.jpeg')}}"
+          alt="Baah"/>
+          <h3>BAAH</h3>
+    </div>
+
+      <div class="Team">
+        <img
+          class="member"
+          src="{{url_for('static', filename='images/Amabagne.jpg')}}"
+          alt="Amabagne"/>
+          <h3>AMABAGNE</h3>
+      </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

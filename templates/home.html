@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="300" >
+    <title>UGEL - Home</title>
+    <link rel='stylesheet' href="{{url_for('static', filename='css/home.css')}}">
+    
+    {% block head %} 
+    
+    {% endblock %}
+  </head>
+<body>
+   
+  
+<section>
+  <div class="container"></div>
+    <header>
+      <div class="header-01">
+        <a href="/"><img src="{{url_for('static', filename='images/logo.png')}}"  class="logo"></a>
+        <h1>UGEL HALL<br><span>MANAGEMENT SYSTEM</span></h1>
+      </div>
+      <ul>
+        <li><a href="/" class="icon home">Home</a></li>
+        <li><a href="/studentPortal" class="icon home">Student Portal</a></li>
+        <li><a href="/contact_us" class="icon contact_us">Contact Us</a> </li>
+        <li><a href="/about_us" class="icon about_us">About Us</a> </li>
+      </ul>
+    </header>
+{% block body %}
+     <div class="content">
+     <div class="textBox">
+      <h2>Hall Management<br><span>System</span></h2>
+      <p>
+        Hi UGEL Staff,<br>
+        Welcome to this platform.This is a secure and easy system to use.
+        Create an account or log in to get started.. <br><span>UGEL goes Digital, UG goes Digital!</span>
+      </p>
+      <div>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
+      </div>
+      </div>
+        <div class="imgBox">
+          <img src="{{url_for('static', filename='images/landing-page.png')}}" class="starbucks">
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+</body>
+</html>

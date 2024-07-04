@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block head %}
+<title>UGEL - Contact Us</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/contact_us.css')}}">
+{% endblock %}
+{% block body%}
+<div class="contact-container">
+   <form onsubmit="sendEmail(); reset(); return false;">
+      <h3>CONTACT US</h3>
+      <input type="text" id="contact-name" placeholder="Enter your name" required>
+      <input type="email" id="contact-email" placeholder="Enter your email" required>
+      <input type="text" id="contact-phone" placeholder="Enter Phone" required>
+      <textarea id="contact-message" rows="4" placeholder="How can we help you?" required></textarea>
+      <button type="submit">Send</button>
+   </form>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+      function sendEmail(){
+      Email.send({
+         Host : "smtp.gmail.com",
+         Username : "mrr.tymer@gmail.com",
+         Password : "password",
+         To : 'mrr.tymer@gmail.com',
+         From : document.getElementById("contact-email"),
+         Subject : "New Contact Form Enquiry",
+         Body : "Name: " + document.getElementById("contact-name").value
+         + "<br> Email: " + document.getElementById("contact-email").value
+         + "<br> Phone No: " + document.getElementById("contact-phone").value
+         + "<br> Message: " + document.getElementById("contact-message").value
+      }).then(
+         message => alert("Mail sent successfully")
+      );
+      }
+</script>
+{% endblock %}
+<script>
+   const icons = document.querySelector(".signup");
+   icons.addEventListener('click', () => {
+     icons.classList.add("active");
+     })
+ </script>

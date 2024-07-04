@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>CHECK-IN ROOM</title>
+
+<link rel='stylesheet' href="{{url_for('static',filename='css/checkIn.css')}}">
+
+</head>
+<body>
+
+    <div class="container">
+        <form name="registration" class="registartion-form" method="post" onsubmit="return formValidation()" action="#">
+            <table>
+              <tr>
+                <td>
+                  <div class="logo"> <img src="{{url_for('static', filename='images/logo.png')}}">
+                    <h3 id="logo">UGEL <br> <span id="warning">HALL MANAGEMENT SYSTEM</span></h3>
+                  </div>
+                  <h1 style="color:black;">CHECK-IN TO ROOM</h1>
+                </td>
+              </tr>
+              <td>
+                <label for="payment_mode">Payment Mode:</label>
+              </td>
+                <td>
+                  <select name="payment_mode" id="payment_mode" required>
+                    <option disabled selected>Choose Payment Mode</option>
+                    <option value="CAL BANK">CAL BANK</option>
+                    <option value="UG STS">UG STS</option>
+                  </select>
+                </td>
+              <tr>
+                <td><label for="student_id">Student ID:</label></td>
+                <td><input type="text" name="student_id" id="student_id" placeholder="Student ID" required></td>
+              </tr>
+              <tr>
+                <td><label for="transaction_nbr">Transaction No:</label></td>
+                <td><input type="text" name="transaction_nbr" id="transaction_nbr" placeholder="Transaction No"></td>
+              </tr>
+              <tr>
+                <td colspan="2"><input type="submit" class="submit" value="Check In To Room"/></td>
+              </tr> 
+            </table>
+          </form>
+        </div>
+<script src="{{url_for('static', filename='js/checkinroom.js')}}"></script>
+</body>
+</html>

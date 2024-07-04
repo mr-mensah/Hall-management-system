@@ -1,0 +1,55 @@
+*{
+   margin: 0px;
+   padding: 0px;
+}
+#head{
+   text-align: center;
+   display: block;
+   color: #596878;
+}
+.about-page{
+   margin-top: 30px;
+   background: rgb(246, 244, 244);
+   border-radius: 20px;
+}
+.subcontainer{
+   margin: 10px 55px 0;
+   padding: 10px;
+}
+.about-content{
+   align-items: center;
+   justify-content: center;
+}
+.about-content p{
+   margin-bottom: 10px;
+   font-size: 0.9rem;
+   font-weight: 600;
+   color: #5e6a79;
+   justify-content: center;
+   line-height: 30px;
+}
+
+.collabrators .Team-supervisor{
+   text-align: center;
+}
+
+.collabrators .team-set{
+   display: flex;
+   text-align: center;
+   gap: 1rem;
+   margin-top: 1rem;
+   margin-bottom: 00.75rem;
+   justify-content: center;
+}
+
+.collabrators h3{
+   margin-top: 6px;
+   text-align: center;
+   color: #677483;
+}
+
+.collabrators img{
+   height: 100px;
+   border-radius: 50%;
+   border: 5px solid #ebb15b;
+}

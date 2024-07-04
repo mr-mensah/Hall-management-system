@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>UGEL - RESET PASSCODE</title>
+{% endblock %}
+
+{% block body %}
+<h1 id="topic">RESET PASSCODE</h1>
+<div class="container">
+    <header>System Passcode:</header>
+    <form action="#" method="post">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Old Passcode</label>
+                            <input name="old" type="password" required>
+                        </div>
+                        <div class="input-field" >
+                            <label>New Passcode</label>
+                            <input name="new" type="password" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Confirm New Passcode</label>
+                            <input name="confirm_new" type="password" required>
+                        </div>
+                    </div>                        
+                    <button class="sumbit" type="submit">
+                        <span class="btnText">Set New Passcode</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div> 
+    </form>
+</div>
+<script>
+    const icons = document.querySelector(".dash-icon");
+    icons.classList.add("active")
+</script>
+{% endblock %}

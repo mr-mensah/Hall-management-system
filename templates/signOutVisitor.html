@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block head %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/log-book.css')}}">
+    <title>VISITORs LOGBOOK</title>
+{% endblock %}
+
+{% block body%}
+<h1 id="topic">VISITORs LOGBOOK</h1>
+    <div id="bucket" class="container">
+        <header>Fill Logbook Details</header>
+        <form action="#" method="post">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Name of Visitor</label>
+                            <input name="visitors_name" type="text" value="{{SignOutVisits.visitors_name}}" disabled required>
+                        </div>
+                        <div class="input-field">
+                            <label>Visitor's ID Type</label>
+                            <select name="id_type" disabled required>
+                                <option disabled selected>{{SignOutVisits.id_type}}</option>
+                                <option value="Student's ID" disabled selected>Student's ID</option>
+                                <option value="Ghana Card" disabled selected>Ghana Card</option>
+                                <option value="Voters ID" disabled selected>Voters ID</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label> ID Number</label>
+                            <input name="id_number" type="text" value="{{SignOutVisits.id_number}}" disabled required>
+                        </div>
+                        <div class="input-field">
+                            <label>Visitors Contact</label>
+                            <input name="visitors_contact" type="tel" value="{{SignOutVisits.contact}}" disabled required>
+                        </div>
+                        <div class="input-field" >
+                            <label>Host Name</label>
+                            <input name="hostname" type="text" value="{{SignOutVisits.hostname}}" disabled required>
+                        </div>
+                        <div class="input-field">
+                            <label>Hall</label>
+                            <select name="hall" disabled required>
+                                <option disabled selected>{{SignOutVisits.hall}}</option>
+                                <option value="Dr. Hilla Limann" disabled selected>Dr. Hilla Limann</option>
+                                <option value="Alexander Kwapong" disabled selected>Alexander Kwapong</option>
+                                <option value="Elizabeth Frances Sey" disabled selected>Elizabeth Frances Sey</option>
+                                <option value="Jean Aka Nelson" disabled selected>Jean Aka Nelson</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label> Room Number</label>
+                            <input name="room_number" type="text" value="{{SignOutVisits.room_number}}" disabled required>
+                        </div>
+                    </div>                        
+                        <button class="sumbit" type="submit">
+                            <span class="btnText">Sign Out</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    <!-------------------- Vistorsbook Records --------------------->
+            <h1 id="topic">VISITS RECORDED</h1>
+            <div class="tickets">
+            {% if Visits|length < 1 %}
+            <h3 style="text-align: center; color: #7d8da1;">No Visits Recorded</h3>
+            {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>VISITOR</th>
+                    <th>ID TYPE</th>
+                    <th>ID</th>
+                    <th>CONTACT</th>
+                    <th>HOST</th>
+                    <th>HALL</th>
+                    <th>ROOM NUMBER</th>
+                    <th>TIME IN</th>
+                    <th>TIME OUT</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Visitors in Visits %}
+                <tr>
+                    <td>{{Visitors.visitors_name}}</td>
+                    <td>{{Visitors.id_type}}</td>
+                    <td>{{Visitors.id_number}}</td>
+                    <td>{{Visitors.contact}}</td>
+                    <td>{{Visitors.hostname}}</td>
+                    <td>{{Visitors.hall}}</td>
+                    <td>{{Visitors.room_number}}</td>
+                    <td>{{Visitors.time_in.strftime('%d-%m-%Y %H:%M:%S')}}</td>
+                    <td>{{Visitors.time_out}}</td>
+                    <td id="vistors" class="sign-out">
+                        <a href="/signoutVisitor/{{Visitors.id}}" class="warning">Sign Out</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {%endif%}
+        </div>
+    </div>
+    <script>
+        const icons = document.querySelector(".lodge-icon");
+        icons.classList.add("active")
+    </script>
+{% endblock %}

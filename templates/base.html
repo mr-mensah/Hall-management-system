@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="UGEL HALL MANAGEMENT SYSTEM">
+<meta name="author" content="END OF COURSE PROJECT">
+<meta name="keywords" content="UGEL HALL MANAGEMENT">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+    {% block head %} 
+    
+    {% endblock %}
+</head>
+<body> 
+    
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo"> <img src="{{url_for('static', filename='images/logo.png')}}">
+                <h3 id="logo">UGEL <span id="warning">HALL MANAGEMENT SYSTEM</span></h3>
+                </div>
+                <div class="close" id="close-btn">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/close.svg')}}" width="28"></span>
+                </div>
+            </div>
+            <div class="sidebar">
+                {% if current_user.portfolio == "Hall Tutor" %}
+                <a href="/dashboard" class="icon dash-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/dashboard.svg')}}"></span>
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="/addstudent" class="icon add-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/person_add.svg')}}"></span>
+                    <h4>Add Student</h4>
+                </a>
+                <a href="/database" class="icon data-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/database.svg')}}"></span>
+                    <h4>Database</h4>
+                </a>
+                <a href="/porterslodge" class="icon lodge-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/holiday_village.svg')}}"></span>
+                    <h4>Porters Lodge</h4>
+                </a>
+                <a href="/systemtickets" class="icon tickets-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/settings.svg')}}"></span>
+                    <h4>System Logs</h4>
+                </a>
+                <a href="/logout">
+                    <span> <img id="logout" class="btn" src="{{url_for('static', filename='images/logout.svg')}}"></span>
+                    <h4>Logout</h4>
+                </a>
+                 {% else %}
+                 <a href="/dashboard" class="icon dash-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/dashboard.svg')}}"></span>
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="/database" class="icon data-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/database.svg')}}"></span>
+                    <h4>Database</h4>
+                </a>
+                <a href="/porterslodge" class="icon lodge-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/holiday_village.svg')}}"></span>
+                    <h4>Porters Lodge</h4>
+                </a>
+                <a href="/systemtickets" class="icon tickets-icon">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/settings.svg')}}"></span>
+                    <h4>System Logs</h4>
+                </a>
+                <a href="/logout">
+                    <span> <img id="logout" class="btn" src="{{url_for('static', filename='images/logout.svg')}}"></span>
+                    <h4>Logout</h4>
+                </a>
+                 {% endif %}
+            </div>
+        </aside>
+        <!--------------------- End of Aside --------------------->
+        <main>
+            <div class="top">
+                <button id="menu-btn">
+                    <span>
+                        <img src="{{url_for('static', filename='images/menu.svg')}}" width="32" height="32">
+                    </span>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        {% if current_user.is_authenticated %}
+                        <p>
+                        Hi, <small class="text-muted">{{current_user.portfolio}}</small>
+                        <b>{{ current_user.surname}}</b>
+                        </p>
+                        
+                        <small class="text-muted">{{current_user.hall}}</small><br>
+                        <a href="/changepassword/{{current_user.id}}"><b><small class="clickable">Change Password</small></a></b><br>
+                            {% if current_user.portfolio == "Hall Tutor" %}
+                        <a href="/resetpasscode"><b><small class="clickable">Reset Passcode</small></a></b>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+    {% block body %}
+        
+
+    {% endblock %}
+        </main>
+    </div>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+</body>
+</html>

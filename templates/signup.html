@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Sign Up</title>
+<script defer src="/static/js/Signupvalid.js"></script>
+<link rel='stylesheet' href="{{url_for('static',filename='css/Signup.css')}}">
+</head>
+<body>
+    <div class="container">
+      <div id="error"></div>
+        <form name="registration" id="register" class="registartion-form" method="post" action="#" onsubmit="return validateform()">
+            <table>
+              <tr>
+                <td>
+                  <div class="logo"> <img src="{{url_for('static', filename='images/logo.png')}}">
+                    <h3 id="logo">UGEL <br> <span id="warning">HALL MANAGEMENT SYSTEM</span></h3>
+                  </div>
+                  <h1 style="color:black">Sign Up</h1>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="surname">Surname:</label></td>
+                <td><input type="text" name="surname" id="surname" placeholder="Surname" required></td>
+              </tr>
+              <tr>
+                <td><label for="othernames">Other names:</label></td>
+                <td><input type="text" name="othernames" id="othernames" placeholder="Other Names" required></td>
+              </tr>
+              <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input type="text" name="username" id="username" placeholder="Username" required></td>
+              </tr>
+              <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" name="email" id="email" placeholder="Email" required></td>
+              </tr>
+              <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="password" placeholder="Password" required></td>
+              </tr>
+              <tr>
+                <td><label for="password2">Confirm Password:</label></td>
+                <td><input type="password" name="password2" id="password2" placeholder="Password" required></td>
+              </tr>
+              <tr>
+                <td><label for="contact">Staff Contact:</label></td>
+                <td><input type="tel" name="contact" id="contact" placeholder="Contact" required></td>
+              </tr>
+              <tr>
+                <td><label for="passcode">Staff Passcode:</label></td>
+                <td><input type="password" name="passcode" id="userid" placeholder="Staff Passcode" required></td>
+              </tr>
+              <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                  Male: <input type="radio" name="gender" value="Male">
+                  Female: <input type="radio" name="gender" value="Female">
+                </td>
+              </tr>
+              <tr>
+                <td><label for="hall">Hall:</label></td>
+                <td>
+                  <select name="hall" id="hall" required>
+                    <option value="">Select Hall</option>
+                    <option value="Dr. Hilla Limann">Dr. Hilla Limann</option>
+                    <option value="Alexander Kwapong">Alexander Kwapong</option>
+                    <option value="Elisabeth Frances Sey">Elisabeth Frances Sey</option>
+                    <option value="Jean Aka Nelson">Jean Aka Nelson</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="portfolio">Portfolio:</label></td>
+                <td>
+                <select name="staff-type" id="portfolio" required>
+                  <option value="">Select Portfolio</option>
+                  <option value="Hall Tutor">Hall Tutor</option>
+                  <option value="Chief Porter">Chief Porter</option>
+                  <option value="Porter">Porter</option>
+                </select>
+              </td>
+              </tr>
+              <tr>
+                <td class="checkbox">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required/>
+                            <label class="form-check-label" for="form2Example3">
+                              I agree all statements in Terms of Service
+                            </label>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2"><input type="submit" class="submit" value="Register"/></td>
+              </tr>
+              <tr> 
+              <td>Already have an account?
+              </span>    
+              <a href="/login">Login</a>
+              </td>
+            </tr>  
+            </table>
+          </form>
+        </div>
+</body>
+</html>

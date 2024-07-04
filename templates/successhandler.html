@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="UGEL HALL MANAGEMENT SYSTEM">
+<meta name="author" content="END OF COURSE PROJECT">
+<meta name="keywords" content="UGEL HALL MANAGEMENT">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/successhandler.css')}}">
+</head>
+<body> 
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo"> <img src="{{url_for('static', filename='images/logo.png')}}">
+                <h3 id="logo">UGEL <span id="warning">HALL MANAGEMENT SYSTEM</span></h3>
+                </div>
+                <div class="close" id="close-btn">
+                    <span> <img class="btn" src="{{url_for('static', filename='images/close-warning.svg')}}" width="28"></span>
+                </div>
+            </div>
+        </aside>
+        <main>
+         <div class="display-error">
+            <h1>{{ success_message }}</h1>
+         </div>
+        </main>
+    <script src="{{url_for('static', filename='js/errorhandler.js')}}"></script>
+</body>
+</html>

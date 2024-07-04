@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>
+    UGEL - Porters Lodge
+</title>
+{% endblock %}
+
+{% block body %}
+<h1 id="topic">PORTERS LODGE</h1>
+<div class="porterslodge">
+    <div class="lodge">
+        <a href="/logkey">
+            <div class="ports">
+                <span> <img id="logkey" class="btn" src="{{url_for('static', filename='images/assignment_add_FILL0_wght400_GRAD0_opsz48.svg')}}"></span>
+                <h2>LOG KEY</h2>
+            </div>
+        </a>
+        <a href="/visitorsbook">
+            <div class="ports">
+                <span><img id="logbook" class="btn" src="{{url_for('static', filename='images/menu_book_FILL0_wght400_GRAD0_opsz48.svg')}}"></span>
+                <h2>VISITORS LOG-BOOK</h2>
+            </div>
+        </a>
+        <a href="/complaints">
+            <div class="ports">
+            <span><img id="complaint" class="btn" src="{{url_for('static', filename='images/construction_FILL0_wght400_GRAD0_opsz48.svg')}}"></span>
+            <h2>SUBMITTED COMPLAINTS</h2>
+            </div>
+        </a>
+        <a href="/checkedIn">
+            <div class="ports">
+            <span><img id="complaint" class="btn" src="{{url_for('static', filename='images/person_yellow.svg')}}"></span>
+            <h2>CHECKED-IN STUDENTS</h2>
+            </div>
+        </a>
+        
+    </div>
+</div>
+<script>
+    const icons = document.querySelector(".lodge-icon");
+    icons.classList.add("active")
+</script>
+{% endblock %}

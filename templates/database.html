@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Database</title>
+{% endblock %}
+
+{% block body %} 
+<h1>DATABASE</h1>
+    <div class="tickets">
+        {% if Students|length < 1 %}
+        <h3 style="text-align: center; color: #7d8da1;" >There are no Students in Database Please add one</h3>
+        {% else %}
+       <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>SURNAME</th>
+                <th>OTHER NAMES</th>
+                <th>SEX</th>
+                <th>HALL</th>
+                <th>ROOM</th>
+                <th>LEVEL</th>
+                <th>COURSE</th>
+                <th>CONTACT</th>
+                <th>EMAIL</th>
+                {% if current_user.portfolio == "Hall Tutor" %}
+                <th>ACTIONS</th>
+                {% else %}
+            </tr>
+                {% endif %}
+        </thead>
+        <tbody>
+            {% for Student in Students %}
+            <tr>
+                <td>{{Student.student_id}}</td>
+                <td>{{Student.surname}}</td>
+                <td>{{Student.othernames}}</td>
+                <td>{{Student.gender}}</td>
+                <td>{{Student.hall}}</td>
+                <td>{{Student.room_number}}</td>
+                <td>{{Student.level}}</td>
+                <td>{{Student.course}}</td>
+                <td>{{Student.contact}}</td>
+                <td>{{Student.email}}</td>
+                {% if current_user.portfolio == "Hall Tutor" %}
+                <td class="action">
+                    <a href="/update/{{Student.id}}">Update</a>
+                    <a href="/delete/{{Student.id}}">Delete</a>
+                {% else %}
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+       </table>
+       {%endif%}
+    </div>
+{% endblock %}

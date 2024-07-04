@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/complaintsSubmission.css')}}">
+    <title>HALL COMPLAINTS FORM</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" name="registration" class="registartion-form" method="post">
+        <table>
+            <tr>
+                <td>
+                    <div class="logo"> <img src="{{url_for('static', filename='images/logo.png')}}">
+                    <h3 id="logo">UGEL <br> <span id="warning">HALL MANAGEMENT SYSTEM</span></h3>
+                    </div>
+                    <h1>COMPLAINTS FORM</h1>
+                </td>
+              </tr>
+                <tr>
+                    <td><label for="student_id">STUDENT ID</label></td>
+                    <td><input name="student_id" type="text" placeholder="Student ID" required></td>
+                </tr>
+                <tr>
+                    <td><label for="issue_type">ISSUE TYPE</label></td>
+                    <td><select name="issue_type" required>
+                                <option disabled selected>Select Type of Issue</option>
+                                <option value="Carpentry Issue">Carpentry Issue</option>
+                                <option value="Plumbing Issue">Plumbing Issue</option>
+                                <option value="Electrical Issue">Electrical Issue</option>
+                                <option value="Other">Other</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="other_specify" >IF OTHER SPECIFY</label></td>
+                    <td><input name="other_specify" type="text" placeholder="If other specify"></td>
+                </tr>
+                <tr>
+                    <td><label>ROOM NUMBER</label></td>
+                    <td><input name="room_number" type="text" placeholder="Room Number" required></td>
+                </tr>
+                <tr>
+                        <td><label for="hall">HALL OF RESIDENT</label></td>
+                        <td><select name="hall" required>
+                             <option disabled selected>Select Hall</option>
+                             <option>Dr. Hilla Liman Hall</option>
+                             <option>Alexander Kwapong Hall</option>
+                             <option>Elisabeth Frances Sey Hall</option>
+                             <option>Jean Nelson Hall</option>
+                            </select></td>
+                      </tr>
+                    <tr>
+                            <td><label for="description">DESCRIPTION OF ISSUE</label></td>
+                            <td><textarea name="description" id="contact-message" rows="4" placeholder="Give a brief description of the Issue"></textarea></td>        
+                        </tr>                 
+                <tr>
+                    <td colspan="2"><input type="submit" class="submit" value="Submit"/></td>
+                </tr>
+         </table>
+        </form>
+    </div>
+</body>
+</html>

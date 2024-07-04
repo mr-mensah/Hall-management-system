@@ -1,0 +1,825 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Poppins:wght@100;300;400;500;600;700;800&display=swap'); */
+/* _______________________________ROOT VARIABLES _______________________________*/
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-dangerclose: #f1a6ac;
+    --color-success: #41f1b6;
+    --color-success-2: rgba(28, 60, 65, 1.2);
+    --color-warining: #ffbb55;
+    --color-warining-2: #e4b671;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-backgroud: #f6f6f9;
+    --color-secondary-variant: #e6e7ee;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+    --border-radius-4: 1.3rem;
+    
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --box-shadow-2: 0 1rem 2rem var(--color-light);
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border:  0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html{
+    font-size: 14px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-backgroud);
+    user-select: none;
+    overflow-x: hidden;
+}
+.container{
+    display: grid;
+    width: 96.9%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto;
+}
+a{
+    color: var(--color-dark);
+}
+img{display: block;}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.4rem;
+}
+h3{
+    font-size: 1.2rem;
+}
+h4{
+    font-size: 0.9rem;
+}
+h5{
+    font-size: 0.77rem;
+}
+small{
+    font-size: 0.75rem;
+}
+.profile-photo{
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+b{
+    color: var(--color-dark);
+}
+.primary{
+    color: var(--color-primary );
+}
+.danger{
+    color: var(--color-danger);
+}
+.success{
+    color: var(--color-success);
+}
+.warning{
+    color: var(--color-warining);
+}
+aside #logo{
+    color: rgb(32, 60, 107);
+}
+aside #warning{
+    color: rgb(210, 174, 107)
+}
+aside{
+    height: 100vh;
+}
+aside .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+aside .logo{
+    display: flex;
+    gap: 0.6rem;
+}
+aside .logo img{
+    width: 5rem;
+    height: 5rem;
+}
+aside .close{
+    display: none;
+}
+
+/* ______________________===== SIDEBAR =====________________________ */
+aside .sidebar{
+display: flex;
+flex-direction: column;
+height: 86vh;
+position: relative;
+top: 3.5rem;
+}
+aside h4{
+    font-weight: 500;
+}
+aside .sidebar a{
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+aside .sidebar a span img{
+    width: 3.3rem;
+}
+aside .sidebar a span #logout{
+    width: 1.8rem;
+}
+aside .sidebar a:last-child{
+    margin-right: 0.96rem;
+    position: absolute;
+    bottom: 2.5rem;
+}
+aside .sidebar a.active{
+    background: var(--color-dark-variant);
+    border-radius: var(--border-radius-1);
+    color: var(--color-white);
+    margin-left: 0;
+}
+aside .sidebar a.active:before{
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: var(--color-success-2);
+}
+aside .sidebar a:active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem-3px);
+}
+aside .sidebar a:hover{
+    color: var(--color-white);
+    background: var(--color-info-dark);
+    border-radius: var(--border-radius-4);
+}
+aside .sidebar a:hover span{
+    margin-left: 1rem;
+}
+/* _____________________________==== Profile Box ====____________________________ */
+main .top .profile{
+    display: flex;
+    gap: 1rem;
+    text-align: right;
+    align-items: center;
+}
+.profile .info .text-muted{
+    color: var(--color-success-2);
+}
+.profile .info .clickable{
+    color: var(--color-primary);
+}
+.profile .info .clickable:hover{
+    color: var(--color-dangerclose);
+}
+/* _____________________________==== DASHBOARD ====_____________________________ */
+main #topic{
+    color: var(--color-dark);
+}
+main .group-tabs{
+    display: grid;
+    grid-template-rows: 0.8fr 0.8fr;
+    gap: 0.8rem;
+}
+main .tabs{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns:0.8fr 1.6fr;
+    gap: 1.4rem;
+    color: var(--color-dark-variant);
+}
+main .a-tab{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 0.5rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+main .a-tab:hover{
+    box-shadow: none;
+    background: var(--color-success-2);
+}
+main .a-tab span img{
+    background: var(--color-warining);
+    padding: 0.5rem;
+    border-radius: 20%;
+    color: var(--color-white);
+    font-size: 2rem;
+    width: 8vh;
+}
+main .a-tab .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* _______________ DATE _______________ */
+main .date-time{
+    display: inline;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.7rem 1.6rem;
+    justify-content: space-between;
+}
+main .date-time input{
+    background: transparent;
+    color: var(--color-primary-variant);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* _______________ SEARCH TAB _______________ */
+main #search{
+    width: 56vh;
+}
+main #search:hover{
+    color: var(--color-white);
+}
+main #search .outer-middle{
+    display: flex;
+    margin: 2.1rem;
+    gap: 1.2rem;
+}
+main #search .outer-middle h2{
+    font-size: 2.5rem;
+}
+main #search .outer-middle small{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-dangerclose);
+}
+
+/* ____________ GENDER RATIO TAB ____________ */
+main #gender-analytics{
+    width: 56vh;
+    height: 27.3vh;
+    color: var(--color-dark-variant);
+}
+main #gender-analytics:hover{
+    color: var(--color-white);
+}
+main #gender-analytics h3{
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+main #gender-analytics .middle .left .text-likemuted{
+    font-size: 0.97rem;
+    font-weight: 600;
+}
+main #gender-analytics #dash-ans{
+    color: var(--color-warining);
+}
+main .a-tab .progress{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+.a-tab .progress .circular-progress{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#ffbb55 3.6deg,#ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.a-tab .progress .circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.progress .circular-progress .progress-value{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-warining);
+}
+.circular-progress .progress-value .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--color-info-dark);
+    text-align: center;
+}
+main .a-tab svg{
+    width: 7rem;
+    height: 7rem;
+}
+
+/* __________ UPCOMING EVENTS TAB __________ */
+main #upcoming-events{
+    height: 48vh;
+}
+main #upcoming-events:hover{
+    color: var(--color-white);
+}
+main #upcoming-events .class-events{
+    display: flex;
+    gap: 1rem;
+}
+main #upcoming-events .class-events .middle .left h3{
+    font-size: 2.5rem;
+    margin-top: 0.8rem;
+}
+main #upcoming-events .class-events .middle{
+    margin-bottom: 1.8rem;
+}
+main .events-table table{
+    width: 100%;
+    text-align: center;
+    padding: var(--border-radius-1);
+}
+main .events-table tbody td{
+    height: 2.5rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dangerclose);
+}
+main .events-table tbody tr:last-child td{
+    border: none;
+}
+main .events-table table thead th{
+    font-size: large;
+    color: var(--color-warining);
+}
+main .events-table table tbody tr{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* _________________________===== SYSTEM TICKET =====_________________________ */
+main{
+    margin-top: 1rem;
+}
+main h1{
+    text-align: center;
+}
+main .tickets{
+    margin-top: 1rem;
+}
+main .tickets table{
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--border-radius-4);
+    text-align: center;
+    box-shadow: var(--box-shadow-2);
+    transition: all 300ms ease;
+}
+main .tickets table:hover{
+    box-shadow: none;
+}
+main .tickets tbody td{
+    height: 2.9rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+main #dashboard-logs tbody td{
+    color: var(--color-dark-variant);
+}
+main thead th{
+    font-size: 1.3rem;
+    color: var(--color-dark);
+}
+main #dashboard-logs thead th{
+    color: var(--color-dark);
+}
+main .tickets tbody tr:last-child td{
+    border: none;
+}
+main .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+main .top button{
+    display: none;
+}
+main .tickets .show-all{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+main .tickets .show-all a{
+    padding: var(--border-radius-1);
+    background: var(--color-dark);
+    border-radius: var(--border-radius-1);
+    color: var(--color-warining);
+}
+main .tickets .show-all a:hover{
+    background: var(--color-success-2);
+}
+/* __________________________==== Database Page ====___________________________ */
+main tbody .action{
+    display:grid;
+}
+main tbody #visitors{
+    display: inline;
+    background: var(--color-danger);
+}
+main tbody .action a{
+    margin-top: 0.1rem;
+    color: var(--color-warining);
+}
+main tbody .sign-out a,main tbody .action a{
+    transition: all 300ms ease;
+
+}
+main tbody .sign-out a:hover,main tbody .action a:hover{
+    color: var(--color-primary);
+    font-size: 0.95rem;
+}
+
+/* _________________________===== ADD STUDENT =====_________________________ */
+main .container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+main .container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    overflow: hidden;
+}
+main #bucket form{
+    min-height: 200px;
+}
+main .container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+main .container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+main .container form button, .btnText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color:var(--color-dark-variant);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.btnText:hover{
+    background: #2e2e2e;
+}
+main .container form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+main .container form button:hover{
+    background-color:var(--color-dark);
+}
+main .container form .buttons{
+    display: flex;
+    align-items: center;
+
+}
+
+@media (max-width: 750px) {
+   main .container form{
+        overflow-y: scroll;
+    }
+   main .container form::-webkit-scrollbar{
+       display: none;
+    }
+   main .container form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+}
+
+/* _________________________===== PORTER'S LODGE =====_________________________ */
+
+main .porterslodge .lodge{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: grid;
+    gap: 1.5rem;
+    
+}
+main .porterslodge .lodge a{
+    color: var(--color-dark-variant);
+}
+main .porterslodge .lodge .ports{
+    display: grid;
+    justify-content: space-around;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 0.5rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    text-align: center;
+}
+main .porterslodge .lodge .ports:hover{
+    box-shadow: none;
+    color: var(--color-white);
+    background: var(--color-success-2);
+}
+main .porterslodge .lodge .ports img{
+    height: 4rem;
+}
+main .porterslodge .lodge .ports #logkey{
+    margin-left: 1.3rem;
+}
+main .porterslodge .lodge .ports #logbook{
+    margin-left: 5.1rem;
+}
+main .porterslodge .lodge .ports #stuLogbook{
+    margin-left: 3.5rem;
+}
+main .porterslodge .lodge .ports #complaint{
+    margin-left: 7rem;
+}
+main .porterslodge .lodge .ports #StuComplaint{
+    margin-left: 5rem;
+}
+/* ===========================MEDIA QUERIES(for tablets and medium size phones)=========================== */
+@media screen and (max-width: 1200px){
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto;
+    }
+    aside .logo h3{
+        display: none;
+    }
+    aside .sidebar h4{
+        display: none;
+    }
+    aside .sidebar a span img{
+        width: 4rem;
+    }
+    aside .sidebar a span #logout{
+        width: 2.5rem;
+    }
+    aside .sidebar a:last-child{
+        margin-top: 1.8rem;
+        position: relative;
+    }
+    
+    main .tickets table{
+        width: 83vw;
+    }
+
+    /* _____________________________==== DASHBOARD ====_____________________________ */
+main #topic{
+    color: var(--color-dark);
+}
+main .group-tabs{
+    margin-top: 1.3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+main .tabs{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: inline;
+    grid-template-rows:1fr;
+    gap: 0.3rem;
+    color: var(--color-dark-variant);
+}
+main .a-tab{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 0.5rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+/* main .a-tab #upcoming-events{
+    height: 100vh;
+} */
+main .a-tab:hover{
+    box-shadow: none;
+    background: var(--color-success-2);
+}
+main .a-tab span img{
+    background: var(--color-warining);
+    padding: 0.5rem;
+    border-radius: 20%;
+    color: var(--color-white);
+    font-size: 2rem;
+    width: 8vh;
+}
+main .a-tab .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* _______________ DATE _______________ */
+main .date-time{
+    display: inline;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    justify-content: space-between;
+}
+main .date-time input{
+    background: transparent;
+    color: var(--color-primary-variant);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    font-family: sans-serif;
+}
+}
+
+
+
+
+/* ===========================MEDIA QUERIES(for smaller sized devices)=========================== */
+@media screen and (max-width: 768px){
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    aside {
+    position: fixed;
+    left: -100%;
+    background: var(--color-white);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    height: 100vh;
+    padding-right: var(--card-padding);
+    display: none;
+    animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+    aside .logo{
+        margin-left: 1rem;
+        align-items: center;
+    }
+    aside .logo h3{
+        display: inline;
+    }
+    aside .sidebar h4{
+        display: inline;
+    }
+    aside .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+    aside .sidebar a span img{
+        width: 2rem;
+    }
+    aside .sidebar a span #logout{
+        width: 1.5rem;
+    }
+    aside .sidebar a:last-child{
+        margin-bottom: 5rem;
+        position: absolute;
+    }
+    aside .close{
+        display: inline-block;
+        cursor: pointer;
+    }
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+    main .tickets{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+    main .tickets table{
+        width: 100%;
+        margin: 0;
+    }
+    main .top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background: var(--color-white);
+        width: 100%;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+    }
+    main .top .profile .info{
+        display: none;
+    }
+    main .top button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+    main .top #menu-btn span{
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>UGEL HALL - EVENTS</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/log-book.css')}}">
+{% endblock %}
+
+{% block body %}
+<h1>EVENTS</h1>
+<div class="tickets" id="dashboard-logs">
+    {% if PostedEvents|length < 1 %}
+        <h3 style="text-align: center; color: #7d8da1;" >No Event(s) Added Yet!</h3>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Event Type</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Events in PostedEvents %}
+                <tr>
+                    <td>{{Events.event_name}}</td>
+                    <td>{{Events.event_type}}</td>
+                    <td>{{Events.event_date}}</td>
+                    <td>{{Events.event_desc}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+           </table>
+           {% endif %}
+      {% if current_user.portfolio == "Hall Tutor" %}
+   <div class="addevent-form">
+      <h2 style="text-align:center; margin-top:1.5rem; color:#2e2e2e;">Add Event</h2>
+         <form action="#" method="post">
+            <div class="form first">
+               <div class="details personal">
+                  <div class="fields">
+                        <div class="input-field">
+                           <label>Event Name</label>
+                           <input name="event_name" type="text" required>
+                        </div>
+                        <div class="input-field">
+                           <label>Type of Event</label>
+                           <input name="event_type" type="text" required>
+                        </div>
+                        <div class="input-field" >
+                           <label>Date of Event</label>
+                           <input name="event_date" type="date" required>
+                        </div>
+                        <div class="input-field" >
+                           <label>Brief Description of Issue</label>
+                           <textarea name="description" type="text"> </textarea>
+                        </div>
+                  </div>                        
+                     <button class="sumbit" type="submit">
+                        <span class="btnText">Add Event</span>
+                        <i class="uil uil-navigator"></i>
+                     </button>
+               </div>
+            </div> 
+      </form>
+   </div>
+   {% else %}
+   <br>
+   {% endif %}
+</div>
+<script>
+   const icons = document.querySelector(".dash-icon");
+   icons.classList.add("active")
+</script>
+{% endblock %}
